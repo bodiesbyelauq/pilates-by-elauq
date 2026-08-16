@@ -3,17 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>Pilates With Elauq</title>
-  <script>
-    (function () {
-      var isMobile =
-        window.matchMedia("(max-width: 767px)").matches ||
-        /Android|iPhone|iPod|Mobile/i.test(navigator.userAgent);
-
-      var destination = isMobile ? "mobile.html" : "desktop.html";
-      window.location.replace(destination + window.location.search + window.location.hash);
-    })();
-  </script>
 </head>
-<body></body>
+<body>
+<script>
+(function () {
+  var ua = navigator.userAgent || navigator.vendor || window.opera || "";
+  var mobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(ua);
+  var narrowScreen = window.matchMedia("(max-width: 767px)").matches;
+
+  var target = (mobileUA || narrowScreen)
+    ? "mobile.html?v=20260816"
+    : "desktop.html?v=20260816";
+
+  window.location.replace(target);
+})();
+</script>
+<noscript>
+  <p><a href="desktop.html">Enter Pilates With Elauq</a></p>
+</noscript>
+</body>
 </html>
